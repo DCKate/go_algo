@@ -74,15 +74,23 @@ func testQuick() {
 	ooo := sort.GoQuickSort(aaa)
 	fmt.Printf("%v\n", ooo)
 }
+
 func testInsert() {
 	aaa := makeSmallData()
 	ooo := sort.GoInsertSort(aaa)
 	fmt.Printf("%v\n", ooo)
 }
 
+func testMerge() {
+	aaa := makeData()
+	ooo := sort.GoMergeSort(aaa)
+	fmt.Printf("%v\n", ooo)
+}
+
 func main() {
-	testBuble()
+	// testBuble()
 	// testSelect()
 	// testQuick()
 	testInsert()
+	// testMerge()
 }
