@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"../go_algo/sort"
+	"go_algo/sort"
 )
 
 //SortEle my sort element
@@ -17,15 +17,16 @@ func (th SortEle) GetCompareValue() int64 {
 }
 
 func makeSmallData() []sort.SortInterf {
-	// a := SortEle{Value: 23}
+	a := SortEle{Value: 23}
 	b := SortEle{Value: 10}
 	c := SortEle{Value: 2}
 	d := SortEle{Value: 3}
 	e := SortEle{Value: 18}
 	f := SortEle{Value: 5}
 	var arr []sort.SortInterf
-	return append(arr, b, c, d, e, f)
+	return append(arr, a, b, c, d, e, f)
 }
+
 func makeData() []sort.SortInterf {
 	a := SortEle{Value: 23}
 	b := SortEle{Value: 10}
@@ -87,10 +88,17 @@ func testMerge() {
 	fmt.Printf("%v\n", ooo)
 }
 
+func testHeap() {
+	aaa := makeData()
+	ooo := sort.GoHeapSort(aaa)
+	fmt.Printf("%v\n", ooo)
+}
+
 func main() {
 	// testBuble()
 	// testSelect()
 	// testQuick()
-	testInsert()
+	//testInsert()
 	// testMerge()
+	testHeap()
 }
